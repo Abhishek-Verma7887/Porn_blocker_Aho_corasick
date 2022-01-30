@@ -150,23 +150,33 @@ public class MainActivity extends AppCompatActivity{
 
         }
     }
-
+    int last_space_pos=-1;
     String porn_hai="";
-    void print_green_links(int v){
+    void print_green_links(int v,int cur_pos,Boolean agla){
         if(v>0){
-            if(tree.get(v).leaf){ found_porn_words.add(index_2_string.get(v)); //porn_hai=porn_hai+" "+index_2_string.get(v);
+            if(tree.get(v).leaf){
+                String cur_match=index_2_string.get(v);
+                 //porn_hai=porn_hai+" "+index_2_string.get(v);
+                if(cur_match.length()==(cur_pos-last_space_pos)&&agla){ //LESS strict checking no substring check
+                    found_porn_words.add(cur_match);
+                }
             }
-            print_green_links(tree.get(v).green_link);
+            print_green_links(tree.get(v).green_link,cur_pos,agla);
         }
     }
 
     void occurence_print(String str){
         int v=0;
+        last_space_pos=-1;
         for(int c=0;c<str.length();c++){
+            Boolean agla=false;
             int i=str.charAt(c)-'a';
+            if(str.charAt(c)==' '){ last_space_pos=c;}
+            if(c+1<str.length()){ if(str.charAt(c+1)==' '){agla=true;} }else{ agla=true;}
+
             //  Log.e("TAG3",String.valueOf("DEKH "+str.charAt(c))+" "+String.valueOf(i)+" "+String.valueOf(v));
             if(i<0||i>25||v<0){ Log.e("TAG2",String.valueOf(str.charAt(c))+" "+String.valueOf(i)+" "+String.valueOf(v)); v=0; continue;}
-            print_green_links(tree.get(v).go[i]); v=tree.get(v).go[i];
+            print_green_links(tree.get(v).go[i],c,agla); v=tree.get(v).go[i];
         }
     }
 
@@ -366,6 +376,7 @@ public class MainActivity extends AppCompatActivity{
             prepro.setVisibility(View.VISIBLE);
             Total_errors="";
             porn_hai="";
+            last_space_pos=-1;
         }
         @Override
         protected void onProgressUpdate(Integer... values) {
