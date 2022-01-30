@@ -7,7 +7,8 @@ of porn keywords in the page.
 (18+ warning)List of porn keywords used in the project is present in the file "keywords_used" file in root directory and can be modified in
 MainActivity.java
 
-##Mobile Application Sceenshots
+## Mobile Application Sceenshots
+
 
 |                 NO PORN FOUND                 |                 PORN FOUND                       |
 |:-------------------------------------------------:|:-------------------------------------------------:|
