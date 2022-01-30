@@ -9,5 +9,6 @@ MainActivity.java
 
 ##Mobile Application Sceenshots
 
-|                 NO PORN FOUND                 |                 PORN FOUND                       ||:-------------------------------------------------:|:-------------------------------------------------:|
+|                 NO PORN FOUND                 |                 PORN FOUND                       |
+|:-------------------------------------------------:|:-------------------------------------------------:|
 | <img width="1604" src="./pics/A.jpeg"> | <img width="1604" src="./pics/B.jpeg"> |
