@@ -69,6 +69,7 @@
         android:scrollbars="vertical"
         android:background="@drawable/back"
         android:textColor="#0A0909"
+        android:paddingStart="10dp"
         android:textSize="15dp"
         app:layout_constraintTop_toBottomOf="@id/textView"
         android:layout_marginStart="13dp"
